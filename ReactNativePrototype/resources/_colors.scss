@@ -1,0 +1,77 @@
+/**
+ * created by yxzhang on 07/28/16
+ * Description: put all color variables here, put them in right block
+ */
+
+///////////////////////////////////////////////////////
+//
+//  general colors
+//
+///////////////////////////////////////////////////////
+
+$black                    : #282828;
+$pureWhite                : #ffffff;
+$highlight                : #06bee1;
+$lightBlue                : #00bee1;
+$blueGrey                 : #ccdbff;
+$lightGrey                : #d8d8d8;
+$secondaryGrey            : #bfbfbf;
+$midGrey                  : #979797;
+$darkGrey                 : #808080;
+$textColor8               : #575f73;
+$textColor10              : #575f73;
+$darkGreyBlue             : #2a3d53;
+$lightGrey                : #f2f2f2;
+$copper                   : #ffa500;
+
+///////////////////////////////////////////////////////
+//
+//  layout colors
+//
+///////////////////////////////////////////////////////
+
+$topChrome                : #2a3d53;
+$secondaryChrome          : #395a80;
+$horizontalRule           : #cccccc;
+
+///////////////////////////////////////////////////////
+//
+//  component colors
+//
+///////////////////////////////////////////////////////
+
+// title
+$title                    : #f2f2f2;
+$appName                  : #cbced4;
+
+// link
+$hyperlink                : #1e71d5;
+
+// grid
+$gridHeader               : #eeeeee;
+$gridText                 : #444a59;
+$gridHighlightLinkedL2    : #fff599;
+$gridHighlightLinkedL3    : #fffacc;
+$rowHoverEditBlue         : #cdf2f9;
+$gridAlternateRow         : #fafafa;
+
+// button
+$primaryButton            : #307fe2;
+$primaryButtonHover       : #1c4c86;
+$primaryButtonDown        : #90c1fd;
+$primaryButtonDisabled    : #d5e5f9;
+$disabledButtonLabel      : #b8c7d9;
+
+// tooltip
+$tooltip                  : #323133;
+
+///////////////////////////////////////////////////////
+//
+//  notification colors
+//
+///////////////////////////////////////////////////////
+
+$error                    : #f53249;
+$danger                   : #ee3147;
+$success                  : #48a651;
+$warning                  : #ff8d0f;

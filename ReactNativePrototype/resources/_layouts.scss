@@ -1,0 +1,200 @@
+/**
+ * created by yxzhang on 08/8/16
+ * Description: put all layout classes here, put them in right block
+ */
+
+///////////////////////////////////////////////////////
+//
+//  mixins
+//
+///////////////////////////////////////////////////////
+
+@mixin forSmallScreen($media) {
+  @media (max-width: $media/16+em) {@content}
+}
+
+///////////////////////////////////////////////////////
+//
+//  shape fill
+//
+///////////////////////////////////////////////////////
+
+.fill-width {
+  width: 100%;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+.fill-viewport-width {
+  width: 100vw;
+}
+
+.fill-viewport-height {
+  height: 100vh;
+}
+
+.full-fill-container {
+  @extend .fill-height;
+  @extend .fill-width;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.full-fill-viewport-container {
+  @extend .fill-viewport-height;
+  @extend .fill-viewport-width;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.clear-fill {
+  background: none;
+  border: none;
+}
+
+///////////////////////////////////////////////////////
+//
+//  borders
+//
+///////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////
+//
+//  box shadows
+//
+///////////////////////////////////////////////////////
+
+@mixin popUpBoxShadow() {
+  box-shadow: 8px 8px 15px 0 rgba(0, 0, 0, 0.35) !important;
+}
+
+
+///////////////////////////////////////////////////////
+//
+//  alignment position
+//
+///////////////////////////////////////////////////////
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+///////////////////////////////////////////////////////
+//
+//  single element
+//
+///////////////////////////////////////////////////////
+
+.inline-non-padding {
+  display: inline-block;
+  padding: 0;
+}
+
+.non-white-space-or-scroll-container {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+///////////////////////////////////////////////////////
+//
+//  containers
+//
+///////////////////////////////////////////////////////
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.centered-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 10 column system
+
+.flex-col-10 {
+  @extend .row-flex;
+  flex-wrap: wrap;
+  .col-1 {
+    width: 10%;
+  }
+  .col-2 {
+    width: 20%;
+  }
+  .col-3 {
+    width: 30%;
+  }
+  .col-4 {
+    width: 40%;
+  }
+  .col-5 {
+    width: 50%;
+  }
+  .col-6 {
+    width: 60%;
+  }
+  .col-7 {
+    width: 70%;
+  }
+  .col-8 {
+    width: 80%;
+  }
+  .col-9 {
+    width: 90%;
+  }
+}
+
+// 12 column system
+
+.flex-col-12{
+  @extend .row-flex;
+  flex-wrap: wrap;
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%
+  }
+  .col-11 {
+    width: 91.66%
+  }
+}

@@ -1,0 +1,317 @@
+/**
+ * created by yxzhang on 08/08/16
+ * Description: put all text classes here, when you create new class, check if there are other classes which contains most of your requirements,
+ *    if so, don't create a class here, put your class in your component styling file and extend + overwrite the class defined here
+ *    please put class definition in the right block
+ */
+
+///////////////////////////////////////////////////////
+//
+//  font definition
+//
+///////////////////////////////////////////////////////
+
+@font-face {
+  font-family: 'Source Sans Pro Regular';
+  src: url('en-us/fonts/source-sans-pro/SourceSansPro-Regular.otf');
+}
+@font-face {
+  font-family: 'Source Sans Pro Semibold';
+  src: url('en-us/fonts/source-sans-pro/SourceSansPro-Semibold.otf');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('en-us/fonts/source-sans-pro/SourceSansPro-Regular.otf');
+}
+
+
+///////////////////////////////////////////////////////
+//
+//  texts
+//
+///////////////////////////////////////////////////////
+
+.Headline-1 {
+  font-family: Source Sans Pro;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: $black;
+}
+
+.Subheadline {
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  font-weight: 600;
+  color: $black;
+}
+
+.Section-Header {
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.97;
+  color: $black;
+}
+
+.APPLICATION-TITLE {
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 1.8px;
+  text-align: center;
+  color: $title;
+}
+
+.Modal-Window-Title {
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  line-height: 1.83;
+  color: $title;
+}
+
+.Disabled-Button-Label {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.75;
+  color: $disabledButtonLabel;
+}
+
+.Tree-Nav-L1 {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.94;
+  color: $black;
+}
+
+.Tab-Link-Active-or-Hover {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: $black;
+}
+
+.Tab-Link-Disabled {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: $secondaryGrey;
+}
+
+.Tab-Link {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: $darkGrey;
+}
+
+.Tree-Nav-L2 {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  line-height: 1.94;
+  color: $black;
+}
+
+.Tree-Nav-L3 {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.94;
+  color: $black;
+}
+
+.Secondary-Button-Label {
+  font-family: Source Sans Pro;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: $black;
+}
+
+.Primary-Button-Label {
+  font-family: Source Sans Pro;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: $pureWhite;
+}
+
+.Grid-Header {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 2.07;
+  color: $gridText;
+}
+
+.Form-Title {
+  width: 76px;
+  height: 15px;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 400;
+  color: #f2f2f2;
+}
+
+.Form-Element-Text {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 2.25;
+  color: $black;
+}
+
+.Page-Error-Message {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  color: $error;
+}
+
+.Hint-Text {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  color: $secondaryGrey;
+}
+
+.Context-Menu-Text {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.86;
+  color: $black;
+}
+
+.Context-Menu-Selected {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 1.86;
+  color: $pureWhite;
+}
+
+.Text-Style-10 {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 1.86;
+  color: $textColor10;
+}
+
+.Base-Text-Link {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 1.86;
+  color: $hyperlink;
+}
+
+.Text-Style-8 {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 2.14;
+  color: $textColor8;
+}
+
+.Breadcrumb {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 2.14;
+  color: $pureWhite;
+}
+
+.Text-Style-15 {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  color: $black;
+}
+
+.Text-Style-2 {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 1.86;
+  color: $gridText;
+}
+
+.Grid-Financial-Data {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  line-height: 1.86;
+  text-align: right;
+  color: $gridText;
+}
+
+.Data-Summary-Value {
+  font-family: Source Sans Pro;
+  font-size: 12px;
+  font-weight: 600;
+  color: $gridText;
+}
+
+.Form-Element-Error-Message {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 400;
+  color: $error;
+}
+
+.Tool-Tip {
+  font-family: Source Sans Pro;
+  font-size: 12px;
+  line-height: 1.75;
+  letter-spacing: 0.3px;
+  color: $tooltip;
+}
+
+.Data-Summary-Label {
+  font-family: Source Sans Pro;
+  font-size: 12px;
+  color: $darkGrey;
+}
+
+.Button-Text {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.6px;
+  color: $pureWhite;
+}
+
+.Minor-Link {
+  font-family: Source Sans Pro;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.9px;
+  color: $title;
+}
+
+.Placeholder-Text {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  color: $darkGrey;
+}
+
+///////////////////////////////////////////////////////
+//
+//  links
+//
+///////////////////////////////////////////////////////
+
+.Active-Link {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: $black;
+}
+
+.Default-Link {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: $darkGrey;
+}

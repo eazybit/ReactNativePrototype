@@ -1,0 +1,21 @@
+/**
+ * created by yxzhang on 07/28/16
+ * Description: put all icons here, put them in right block
+ */
+
+.close-X {
+  width: 16px;
+  height: 16px;
+  color: $title;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  &:before {
+    content: "\f00d";
+  }
+}
+
+.lock-icon {
+  color: $copper;
+}

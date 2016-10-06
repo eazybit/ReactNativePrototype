@@ -1,0 +1,370 @@
+/**
+ * created by yxzhang on 08/08/16
+ * Description: define widget styling, put them in the right block
+ */
+
+///////////////////////////////////////////////////////
+//
+//  buttons
+//
+///////////////////////////////////////////////////////
+
+.general-button {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border-radius: 2.5px;
+  padding: 3px 20px;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.primary-button {
+  @extend .Primary-Button-Label;
+  @extend .general-button;
+  background-color: $primaryButton;
+
+  &:disabled, &:disabled:hover  {
+    color: $disabledButtonLabel;
+    background-color: $primaryButtonDisabled;
+  }
+
+  &:hover {
+    color: $pureWhite;
+    background-color: $primaryButtonHover;
+  }
+
+  &:active {
+    color: $primaryButtonHover;
+    background-color: $primaryButtonDown;
+  }
+
+  &:focus {
+
+  }
+}
+
+.primary-button-outline {
+  @extend .primary-button;
+  color: $primaryButton;
+  background-color: $pureWhite;
+  border: 1px solid $primaryButton;
+}
+
+.secondary-button {
+  @extend .Secondary-Button-Label;
+  @extend .general-button;
+  background-color: $secondaryGrey;
+
+  &:disabled, &:disabled:hover {
+    color: $secondaryGrey;
+    background-color: $lightGrey;
+  }
+
+  &:hover {
+    color: $black;
+    background-color: $lightGrey;
+  }
+}
+
+.danger-button {
+  @extend .Primary-Button-Label;
+  @extend .general-button;
+  background-color: $danger;
+
+  &:disabled, &:disabled:hover {
+    color: $secondaryGrey;
+    background-color: #d68484;
+  }
+}
+
+.left-side-button {
+  margin-right: 20px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.right-side-button {
+  margin-left: 20px;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  buttons with layout
+//
+//  usage introduction:
+//      do NOT use pull-left-button class for the first button, if you want the first button align to the left and all the other buttons align to the left
+//      do NOT use pull-right-button class for the button, if that button is the only button in the container and align to the right
+//      you cannot use pull-left-button/pull-right-button for all of your buttons, you cannot have all the elements inside the container as float
+//
+//  sample usage: suppose you have 4 buttons in one row, 2 buttons alight to the left, 2 buttons align to the right
+//      <div>
+//        <button class="somthing has margin-right: 20px">button1</button>
+//        <button class="pull-left-button">button2</button>
+//        <button class="pull-right-button">button2</button>
+//        <button class="pull-right-button">button4</button>
+//      </div
+//
+///////////////////////////////////////////////////////
+
+.pull-left-button {
+  @extend .pull-left;
+  display: inline-block !important;
+
+}
+
+.pull-right-button {
+  @extend .pull-right;
+  display: inline-block !important;
+  margin-left: 20px;
+}
+
+
+
+
+///////////////////////////////////////////////////////
+//
+//  modal dialog
+//
+///////////////////////////////////////////////////////
+
+.dialog {
+  padding: 0;
+  border: 0 !important;
+
+  .dialog-header {
+    background-color: $darkGreyBlue !important;
+    text-align: center !important;
+    padding: 11px 0 !important;
+
+    .dialog-title, &.dialog-title {
+      @extend .Form-Title;
+      color: $pureWhite;
+      display: inline-block;
+      height: auto;
+      width: auto;
+    }
+
+    .dialog-actions, &.dialog-actions {
+      display: inline-block;
+      padding-top: 0 !important;
+      height: auto;
+      width: auto;
+      top: auto;
+    }
+  }
+
+  .dialog-content {
+    @extend .non-white-space-or-scroll-container;
+  }
+
+  .dialog-footer {
+    position: relative;
+    padding: 11px;
+    border-radius: 0 0 3px 3px;
+    background-color: $darkGreyBlue;
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  tabs
+//
+///////////////////////////////////////////////////////
+
+.tab-items {
+  display: flex;
+  border: none;
+
+  .tab-item-default-state {
+    margin-top: 28px;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid $lightGrey;
+    &:hover {
+      color: $black;
+      background-color: $pureWhite;
+    }
+
+    .tab-item-default-title, &.tab-item-default-title {
+      @extend .Active-Link;
+      color: $darkGrey;
+      padding: 0;
+      padding-bottom: 14px;
+      &:hover {
+        color: $black;
+        background-color: $pureWhite;
+      }
+    }
+  }
+
+  .tab-item-active-state {
+    border-bottom: 4px solid $lightBlue;
+
+    .tab-item-active-title, &.tab-item-active-title {
+      color: $black;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  menu
+//
+///////////////////////////////////////////////////////
+
+.menu-sprite {
+  font-size: 13px;
+  overflow: visible;
+  padding: 0;
+  padding-right: 12px;
+  margin: 0;
+  height: 100%;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.filter-list-empty-sprite {
+  width: 28px;
+}
+
+.menu-item {
+  @extend .Context-Menu-Text;
+  box-sizing: border-box;
+  color: $black;
+  background-color: $pureWhite;
+  border: 1px solid $pureWhite;
+  min-height: 24px;
+  white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+    color: $pureWhite;
+    background-color: $highlight;
+  }
+}
+
+.menu-divider-container {
+  padding: 0;
+  margin: 0;
+
+  .menu-divider {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  grids
+//
+///////////////////////////////////////////////////////
+.grid-header {
+  background-color: $gridHeader;
+  border-bottom: 2px solid $midGrey;
+
+  .header-column {
+    background-color: $gridHeader;
+
+    a.k-link {
+      @extend .Grid-Header;
+    }
+  }
+
+  .non-filterable-column {
+    cursor: not-allowed;
+    box-shadow: none !important;
+    border: inherit !important;
+  }
+}
+
+.grid-content {
+
+  .default-state {
+    cursor: pointer;
+    border: none !important;
+  }
+
+  .selected-state {
+    color: $pureWhite;
+    background-color: $highlight !important;
+    box-shadow: none !important;
+
+    &:hover {
+      box-shadow: none !important;
+      color: $pureWhite;
+      background-color: $highlight !important;
+    }
+
+    .lock-icon {
+      color: $copper;
+    }
+  }
+
+  .focused-state, .active-state {
+    box-shadow: none !important;
+    color: $pureWhite;
+    background-color: $highlight !important;
+
+    &:hover {
+      box-shadow: none !important;
+      color: $pureWhite;
+      background-color: $highlight !important;
+    }
+  }
+
+  .alt-state {
+    background-color: $gridAlternateRow;
+  }
+
+  .hover-state {
+    background-color: $rowHoverEditBlue !important;
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  scroll bar
+//
+///////////////////////////////////////////////////////
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2.5px;
+  background-color: rgba(.5, .5, .5, .5);
+}

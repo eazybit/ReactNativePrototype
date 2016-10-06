@@ -1,0 +1,174 @@
+/**
+ * created by yxzhang on 08/09/16
+ * Description: overwrite vendor styling, put them in the right block
+ */
+
+///////////////////////////////////////////////////////
+//
+//  kendo window
+//
+///////////////////////////////////////////////////////
+
+.k-window {
+  @extend .dialog;
+
+  .k-window-content {
+    @extend .dialog-content;
+  }
+}
+
+.k-window-titlebar {
+  @extend .dialog-header;
+
+  .k-window-title {
+    @extend .dialog-title;
+  }
+
+  .k-window-actions {
+    @extend .dialog-actions;
+
+    .k-link{
+      @extend .close-X;
+
+      &:hover {
+        background-color: inherit;
+      }
+
+      span {
+        display: none;
+      }
+
+      &.k-state-hover {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+///////////////////////////////////////////////////////
+//
+//  kendo tab strip
+//
+///////////////////////////////////////////////////////
+
+.k-tabstrip-items{
+  @extend .tab-items;
+
+  .k-state-default {
+    @extend .tab-item-default-state;
+
+    .k-link {
+      @extend .tab-item-default-title;
+    }
+
+    .k-loading.k-complete {
+      border: none;
+    }
+
+    &.k-last {
+      margin-right: 0;
+    }
+  }
+
+  .k-state-active {
+    @extend .tab-item-active-state;
+
+    .k-link {
+      @extend .tab-item-active-title;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  kendo grid
+//
+///////////////////////////////////////////////////////
+
+.k-grid {
+  border-radius: 0;
+
+  .k-grid-header {
+    @extend .grid-header;
+    tr > th{
+      @extend .header-column
+    }
+  }
+
+  .k-grid-content {
+    @extend .grid-content;
+    tr {
+      @extend .default-state;
+      &.k-alt {
+        @extend .alt-state;
+      }
+
+      &.k-state-default {
+        @extend .default-state;
+      }
+
+      &.k-state-selected {
+        @extend .selected-state;
+
+        td, td.k-state-focused {
+          @extend .focused-state;
+        }
+
+        td, td.k-state-active {
+          @extend .active-state;
+        }
+
+        td.k-state-focused {
+          height: calc(100% - 1px);
+        }
+      }
+    }
+
+    tr:hover, tr.k-alt:hover, tr:not(.k-state-selected):hover, tr.k-alt:not(.k-state-selected):hover {
+      @extend .hover-state;
+    }
+
+    .k-grid-content > table > tbody > tr > td {
+      @extend .default-state;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  kendo menu
+//
+///////////////////////////////////////////////////////
+
+.k-menu {
+  @include popUpBoxShadow();
+
+  .k-sprite {
+    @extend .menu-sprite;
+  }
+
+  .k-state-default {
+    @extend .menu-item;
+
+    .k-link {
+      color: inherit;
+      background: none;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////
+//
+//  kendo multi-select
+//
+///////////////////////////////////////////////////////
+
+.k-multiselect {
+  .k-button {
+    max-width: calc(100% - 5px);
+    text-align: left;
+    word-wrap: break-word;
+  }
+}
