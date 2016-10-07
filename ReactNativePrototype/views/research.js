@@ -2,7 +2,7 @@
  * Created by yxzhang on 10/4/16.
  */
 import React, { Component, PropTypes } from 'react';
-import { ListView, View, Text, StyleSheet, TouchableHighlight, Alert } from 'react-native';
+import { ListView, View, Text, StyleSheet, TouchableHighlight, Alert, RNFSManager } from 'react-native';
 
 export default class Research extends Component {
     static propTypes = {
@@ -109,6 +109,14 @@ const Row = (props) => (
 function downloadNote(id) {
     try {
         var RNFS = require('react-native-fs');
+        var path = RNFS.DocumentDirectoryPath + '/' + id + '.json';
+        RNFS.writeFile(path, 'testing', 'utf8')
+            .then((success) => {
+                alert(success + 'success');
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     } catch(e) {
         alert(e);
     }
