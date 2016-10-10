@@ -126,6 +126,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-contacts')
     compile project(':react-native-fs')
     compile project(':react-native-svg')
     compile fileTree(dir: "libs", include: ["*.jar"])

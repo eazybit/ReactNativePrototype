@@ -6,8 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "@remobile/react-native-cordova": "^1.0.9",
+    "@remobile/react-native-local-notifications": "^1.0.0",
     "react": "15.3.2",
     "react-native": "0.34.1",
+    "react-native-contacts": "^0.5.1",
     "react-native-fs": "^2.0.1-rc.2",
     "react-native-svg": "^4.3.1"
   }

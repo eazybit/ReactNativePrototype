@@ -3,6 +3,9 @@
  */
 import React, { Component, PropTypes } from 'react';
 import { ListView, View, Text, StyleSheet, TouchableHighlight, Alert, RNFSManager } from 'react-native';
+import NoteDetail from './note-detail';
+import Contact from './contact';
+var RNFS = require('react-native-fs');
 
 export default class Research extends Component {
     static propTypes = {
@@ -54,13 +57,95 @@ export default class Research extends Component {
         });
     }
 
+    renderRow(data: String) {
+        if(data == null) {
+            return (<Text>Empty</Text>);
+        }
+        return (
+            <TouchableHighlight
+                onPress={() => Alert.alert(
+                `${data.title}`,
+                `${data.id}`,
+                [
+                  {text: 'Download', onPress: () => this.downloadNote(data)},
+                  {text: 'Detail', onPress: () => this.showDetail(data.id)},
+                  {text: 'Edit', onPress: () => alert('Edit')},
+                  {text: 'Delete', onPress: () => alert('Delete')},
+                  {text: 'Add Sidenote', onPress: () => alert('Add sidenote')},
+                  {text: 'Cancel'}
+                ]
+              )}>
+                    <View style={styles.container}>
+                        <Text style={styles.title}>{`${data.title}`}</Text>
+                        <Text style={styles.subTitle}>{`${data.entryType}`}</Text>
+                        <Text style={styles.subTitle}>{`${data.displayDate}`}</Text>
+                        <Text style={styles.subTitle}>{`${data.submitter}`}</Text>
+                        <Text style={styles.subTitle}>{`${data.priority}`}</Text>
+                    </View>
+            </TouchableHighlight>
+        )
+    }
+
+    downloadNote(data) {
+        try {
+            // var data = JSON.parse(dataString);
+            var path = RNFS.DocumentDirectoryPath + '/' + data.id + '.json';
+            console.log(path);
+            RNFS.writeFile(path, JSON.stringify(data), 'utf8')
+                .then((success) => {
+                    alert('save file success at: ' + path);
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                });
+        } catch(e) {
+            alert(e);
+        }
+    }
+
+    showDetail(id) {
+        try {
+            var path = RNFS.DocumentDirectoryPath + '/' + id + '.json';
+            console.log(path);
+            RNFS.readFile(path, 'utf8')
+                .then((content) => {
+                    this.props.navigator.push( {
+                        component: NoteDetail,
+                        title: 'Note Detail',
+                        passProps: {
+                            note: JSON.parse(content)
+                        }
+                    });
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                });
+        } catch(e) {
+            alert(e);
+        }
+    }
+
+    goToContact() {
+        this.props.navigator.push( {
+            component: Contact,
+            title: 'Contact List'
+        });
+    }
+
 
     render() {
         return (
-            <ListView
-                dataSource={this.state.dataSource}
-                renderRow={(data) => <Row {...data} />}
-            />
+            <View style={{
+                    marginTop: 100
+                }}>
+                <TouchableHighlight onPress={() => this.goToContact()}>
+                    <Text>Contact</Text>
+                </TouchableHighlight>
+                <ListView
+                    dataSource={this.state.dataSource}
+                    renderRow={(data) => this.renderRow({...data})}
+                />
+            </View>
         )
     }
 }
@@ -81,44 +166,3 @@ const styles = StyleSheet.create({
         fontSize: 12
     }
 });
-
-const Row = (props) => (
-    <TouchableHighlight
-       onPress={() => Alert.alert(
-            `${props.title}`,
-            `${props.id}`,
-            [
-              {text: 'Download', onPress: () => downloadNote(`${props.id}`)},
-              {text: 'Detail', onPress: () => console.log('Cancel Pressed!')},
-              {text: 'Edit', onPress: () => alert('Edit')},
-              {text: 'Delete', onPress: () => alert('Delete')},
-              {text: 'Add Sidenote', onPress: () => alert('Add sidenote')},
-              {text: 'Cancel'}
-            ]
-          )}>
-        <View style={styles.container}>
-            <Text style={styles.title}>{`${props.title}`}</Text>
-            <Text style={styles.subTitle}>{`${props.entryType}`}</Text>
-            <Text style={styles.subTitle}>{`${props.displayDate}`}</Text>
-            <Text style={styles.subTitle}>{`${props.submitter}`}</Text>
-            <Text style={styles.subTitle}>{`${props.priority}`}</Text>
-        </View>
-    </TouchableHighlight>
-);
-
-function downloadNote(id) {
-    try {
-        var RNFS = require('react-native-fs');
-        var path = RNFS.DocumentDirectoryPath + '/' + id + '.json';
-        RNFS.writeFile(path, 'testing', 'utf8')
-            .then((success) => {
-                alert(success + 'success');
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-    } catch(e) {
-        alert(e);
-    }
-
-}
