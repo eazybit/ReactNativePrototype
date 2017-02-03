@@ -17,6 +17,7 @@ export default class NoteDetail extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text>234</Text>
                 <Text style={styles.title}>{`${this.props.note.title}`}</Text>
                 <Text style={styles.subTitle}>{`${this.props.note.entryType}`}</Text>
                 <Text style={styles.subTitle}>{`${this.props.note.displayDate}`}</Text>

@@ -27,7 +27,7 @@ export default class Research extends Component {
     }
 
     getNotes() {
-        return fetch('http://tamaledev.gencos.com/restapi/2.0/thread/?expand=thread;entry;entities;entity;source;submitter;&outputformat=json&page=1&rpp=20&showpermission=true&sortby=lastediteddate&sortorder=desc', {
+        return fetch('http://tamaledev.gencos.com/restapi/2.0/thread/?expand=thread;entry;entities;entity;source;submitter;&outputformat=json&page=1&rpp=200&showpermission=true&sortby=lastediteddate&sortorder=desc', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
